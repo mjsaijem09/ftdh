@@ -1,0 +1,32 @@
+- var locations = [
+- {city: 'Tokyo', description: '119'},
+- {city: 'Paris', description: '76'},
+- {city: 'Miami', description: '67'},
+- {city: 'Sydney', description: '88'},
+- {city: 'Tehran', description: '102'},
+- {city: 'Montreal', description: '96'},
+- {city: 'Munich', description: '83'},
+- {city: 'Maui', description: '112'},
+- {city: 'Auckland', description: '65'},
+- {city: 'Bologna', description: '72'},
+- {city: 'Guangzhou', description: '63'},
+- {city: 'Buenos Aires', description: '69'},
+- {city: 'Copenhagen', description: '79'},
+- {city: 'Hanoi', description: '58'},
+- {city: 'Muscat', description: '85'},
+- {city: 'Kathmandu', description: '54'},
+- {city: 'Kuala Lumpur', description: '68'}
+- ];
+
+mixin card(city, description)
+	a.card(style="background-image: url('https://source.unsplash.com/600x600/?" + city + ",home')" href="#")
+		.card__overlay
+		.card__info
+			.card__title= city
+			.card__text= '$' + description + '/night average'
+			
+h1 Scroll through the cards horizontally
+.overlay
+.card-wrap
+	each location in locations
+		+card(location.city, location.description)
